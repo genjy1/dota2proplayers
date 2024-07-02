@@ -5,6 +5,7 @@ const select = document.querySelector('#teamNameSelect')
 const title = document.querySelector('title')
 const search = document.querySelector('#search')
 const favIcon = document.querySelector('link')
+const clear = document.querySelector('.clear')
 const getPlayers = async () => {try{
     const proPlayers = await fetch('https://api.opendota.com/api/proPlayers')
     const playersJson = await proPlayers.json()
@@ -24,6 +25,7 @@ const getPlayers = async () => {try{
             input.value = targetName.value
             playersJson.forEach(
                 async(e) => {
+                    container.innerHTML = ''
                     const teamRow = document.createElement('div')
                     const block = document.createElement('div')
                     const img = document.createElement('img')
@@ -68,12 +70,15 @@ const getPlayers = async () => {try{
     console.warn(err);
 }}
 
+clear.addEventListener('click', () => {
+    container.innerHTML = ''
+})
+
 search.addEventListener('change', async() => {
     console.log(search.value);
     const searchAPI = await fetch(`https://api.opendota.com/api/search?q=${search.value}`)
     const APIJSON = await searchAPI.json()
     APIJSON.forEach((e) => {
-        if (e.similarity > 50) {
             console.log(e);
             const container = document.querySelector('.players')
             const avatar = document.createElement('img')   
@@ -88,7 +93,6 @@ search.addEventListener('change', async() => {
             
             wrapper.append(avatar, personaname, lastMatchTime)
             container.append(wrapper)
-        }
     })
 })
 
