@@ -81,6 +81,12 @@ const getPlayers = async () => {try{
     } )
 }catch(err){
     console.warn(err);
+    const errorOption = document.createElement('option')
+    errorOption.textContent = 'На сервере возникла ошибка'
+    select.classList.add('text-red-500')
+    select.classList.add('border-red-500')
+    select.classList.add('rounded-xl')
+    select.append(errorOption)
 }}
 
 clear.addEventListener('click', () => {
@@ -104,7 +110,20 @@ search.addEventListener('change', async() => {
             avatar.src = e.avatarfull
             lastMatchTime.textContent = `Время последнего матча ${dateTime.toLocaleString('ru')}`
             personaname.textContent = e.personaname
-            
+            personaname.classList.add('text-wrap')
+            wrapper.classList.add('border')
+            wrapper.classList.add('flex')
+            wrapper.classList.add('items-center')
+            wrapper.classList.add('flex-col')
+            wrapper.classList.add('transition')
+            wrapper.classList.add('w-48')
+            wrapper.classList.add('h-36')
+            wrapper.classList.add('px-4')
+            wrapper.classList.add('py-4') 
+            wrapper.classList.add('rounded-xl')
+            wrapper.classList.add('hover:border-slate-500')
+
+
             wrapper.append(avatar, personaname, lastMatchTime)
             container.append(wrapper)
     })

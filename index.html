@@ -18,20 +18,22 @@
         }
     </style>
 </head>
-<body style="background-image: url('https://cyberfootball.ru/uploads/topics/preview/00/00/74/19/46e52fbb28.jpg');" class="bg-red-500 bg-no-repeat">
-    <div class="container px-10 rounded-xl border transition my-10 bg-white">
-        <div class="inputs py-5">
-            <select type="text" id="teamNameSelect" placeholder="Название команды" class="border px-3 py-3 mb-10 outline-none w-full"></select>
-            <input type="text" id="teamNameInput" hidden class="border px-3 py-3 mb-10 outline-none">
-            <div class="input-group w-full flex justify-between ">
-                <input type="search" name="" id="search" class="border px-3 py-3 outline-none w-128">
-                <button class="clear border px-3 py-3" >
-                    Очистить    
-                </button>
+<body class="bg-red-500 bg-no-repeat max-[425px]:bg-96 max-[425px]:bg-top -z-50">
+    <div class="bg-wrapper pt-10 -z-40 h-dvh" style="background-image: url('./46e52fbb28.jpg');" >
+        <div class="container px-5 rounded-xl border transition mb-10 bg-white z-10 ">
+            <div class="inputs py-5">
+                <select type="text" id="teamNameSelect" placeholder="Название команды" class="border px-3 py-3 mb-10 outline-none w-full"></select>
+                <input type="text" id="teamNameInput" hidden class="border px-3 py-3 mb-10 outline-none">
+                <div class="input-group w-full flex justify-between ">
+                    <input type="search" name="" id="search" class="border px-3 py-3 outline-none w-128">
+                    <button class="clear border px-3 py-3" >
+                        Очистить    
+                    </button>
+                </div>
             </div>
+            <div class="players pb-5 flex gap-10 flex-wrap self-center justify-between"></div>
+            <div class="search-container flex gap-10 flex-wrap"></div>
         </div>
-        <div class="players pb-5 flex gap-10 flex-wrap items-center"></div>
-        <div class="search-container flex gap-10 flex-wrap"></div>
     </div>
 </body>
 <script src="./script.js"></script>
