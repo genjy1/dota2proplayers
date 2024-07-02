@@ -16,7 +16,7 @@
             margin: 0 auto;
         }
 
-        .players-row{
+        .players{
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -26,8 +26,11 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" id="teamName" placeholder="Название команды">
-        <div class="players-row"></div>
+        <select type="text" id="teamNameSelect" placeholder="Название команды"></select>
+        <input type="text" id="teamNameInput" hidden>
+        <input type="search" name="" id="search">
+        <div class="pro-players"></div>
+        <div class="players"></div>
     </div>
 </body>
 <script src="./script.js"></script>
