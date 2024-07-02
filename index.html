@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>players</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
             padding: 0;
@@ -15,25 +16,20 @@
             max-width: 1180px;
             margin: 0 auto;
         }
-
-        .players{
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px;
-        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <select type="text" id="teamNameSelect" placeholder="Название команды"></select>
-        <input type="text" id="teamNameInput" hidden>
-        <input type="search" name="" id="search">
-        <button class="clear">
-            Очистить    
-        </button>
-        <div class="pro-players"></div>
-        <div class="players"></div>
+<body style="background-image: url('https://d1lss44hh2trtw.cloudfront.net/assets/article/2022/09/07/dota-2-the-international-2022-battle-pass-dates-prices-levels_feature.jpg');" class="bg-red-500">
+    <div class="container px-10 rounded-xl border transition my-10 bg-white">
+        <div class="inputs py-5">
+            <select type="text" id="teamNameSelect" placeholder="Название команды" class="border px-3 py-3 mb-10 outline-none"></select>
+            <input type="text" id="teamNameInput" hidden class="border px-3 py-3 mb-10 outline-none">
+            <input type="search" name="" id="search" class="border px-3 py-3 mb-10 outline-none">
+            <button class="clear border px-3 py-3 mb-10" >
+                Очистить    
+            </button>
+        </div>
+        <div class="players pb-5 flex gap-10"></div>
+        <div class="search-container flex gap-10 flex-wrap"></div>
     </div>
 </body>
 <script src="./script.js"></script>

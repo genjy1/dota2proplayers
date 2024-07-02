@@ -1,5 +1,6 @@
 'use strict'
 const container = document.querySelector('.players')
+const searchContainer = document.querySelector('.search-container')
 const input = document.querySelector('#teamNameInput')
 const select = document.querySelector('#teamNameSelect')
 const title = document.querySelector('title')
@@ -54,8 +55,20 @@ const getPlayers = async () => {try{
                                 case undefined:
                                     p.textContent = 'Mid'
                             }
-                            personaname.textContent = e.personaname
+                            personaname.textContent = e.personaname.length > 16 ? e.personaname.substring(0, 16) : e.personaname
                             block.dataset.id = e.steamid
+                            personaname.classList.add('text-wrap')
+                            block.classList.add('border')
+                            block.classList.add('flex')
+                            block.classList.add('items-center')
+                            block.classList.add('flex-col')
+                            block.classList.add('transition')
+                            block.classList.add('w-48')
+                            block.classList.add('h-36')
+                            block.classList.add('px-4')
+                            block.classList.add('py-4') 
+                            block.classList.add('rounded-xl')
+                            block.classList.add('hover:border-slate-500')
                             block.append(img, h2, p, personaname)
                             container.append(block)             
                         }else if (e.team_name !== input.value) {
@@ -72,6 +85,7 @@ const getPlayers = async () => {try{
 
 clear.addEventListener('click', () => {
     container.innerHTML = ''
+    searchContainer.innerHTML = ''
 })
 
 search.addEventListener('change', async() => {
@@ -80,7 +94,7 @@ search.addEventListener('change', async() => {
     const APIJSON = await searchAPI.json()
     APIJSON.forEach((e) => {
             console.log(e);
-            const container = document.querySelector('.players')
+            const container = document.querySelector('.search-container')
             const avatar = document.createElement('img')   
             const lastMatchTime = document.createElement('p')
             const personaname = document.createElement('h2')
