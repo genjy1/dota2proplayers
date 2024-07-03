@@ -71,9 +71,7 @@ const getPlayers = async () => {try{
                             block.classList.add('hover:border-slate-500')
                             block.append(img, h2, p, personaname)
                             container.append(block)             
-                        }else if (e.team_name !== input.value) {
-                            block.remove()   
-                        }             
+                        }            
                     }
             ) 
         }
